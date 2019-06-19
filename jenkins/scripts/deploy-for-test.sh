@@ -8,5 +8,5 @@ source /root/.bashrc
 npm run build
 set +x
 
-/myscript/expect_scp 47.100.47.91 root HLTech@2019666 ./build /root/hongjun/test/
+/myscript/expect_scp 47.100.47.91 root HLTech@2019666 ./package.json /root/hongjun/test/
 echo 'created your initial Pipeline as a Jenkinsfile.)'
