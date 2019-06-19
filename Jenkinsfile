@@ -12,7 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                  sh 'ls -al'
-            
+                 sh 'ENV'
+                 sh 'echo $SHELL'           
             }
         }
         stage('Deliver for development') {
