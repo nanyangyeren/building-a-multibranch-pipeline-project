@@ -11,7 +11,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               /bin/bash './jenkins/scripts/deploy-for-test.sh'
+                echo 'Hello, '
+
+                sh '''#!/bin/bash
+
+                    echo "Hello from bash"
+                    echo "Who I'm $SHELL"
+                '''
             }
         }
     }
