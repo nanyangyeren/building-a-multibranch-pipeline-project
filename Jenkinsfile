@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh ' source /root/.bashrc   npm install' 
+                 sh './jenkins/scripts/test.sh' 
             }
         }
         stage('Deliver for development') {
