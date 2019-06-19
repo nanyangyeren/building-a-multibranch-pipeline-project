@@ -11,17 +11,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 'npm install'
+                sh  'npm install'
             }
         }
         stage('Test') {
             steps {
-                 './jenkins/scripts/test.sh'
+                sh './jenkins/scripts/test.sh'
             }
         }
         stage('Deliver for development') {
             steps {
-                 './jenkins/scripts/deliver-for-test.sh'
+                sh './jenkins/scripts/deliver-for-test.sh'
             }
         }
     }
