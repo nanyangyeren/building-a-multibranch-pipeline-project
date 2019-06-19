@@ -11,9 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh 'ls -al'
-                 sh 'ENV'
-                 sh 'echo $SHELL'           
+                 sh "/bin/bash -c 'npm install' "
             }
         }
         stage('Deliver for development') {
