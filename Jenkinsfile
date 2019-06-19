@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bash '''#!/bin/bash
+                sh '''#!/bin/bash
                  echo "hello world" 
                    node -v
                      '''
