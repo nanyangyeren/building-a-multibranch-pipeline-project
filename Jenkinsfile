@@ -11,13 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-           /bin/bash 'npm install' 
+             sh  'npm install' 
            }
-        }
-        stage('Test') {
-            steps {
-                sh '/bin/bash ./jenkins/scripts/test.sh'
-            }
         }
         stage('Deliver for development') {
             when {
