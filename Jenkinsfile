@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh '/root/.nvm/versions/node/v8.16.0/bin/npm install' 
+                 sh ' source /root/.bashrc   npm install' 
             }
         }
         stage('Deliver for development') {
