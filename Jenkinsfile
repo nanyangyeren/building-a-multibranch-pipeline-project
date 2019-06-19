@@ -14,9 +14,16 @@ pipeline {
                 /bin/bash 'npm install'
             }
         }
+        stage('Test') {
+            steps {
+                /bin/bash './jenkins/scripts/test.sh'
+            }
+        }
         stage('Deploy for production') {
             steps {
-                /bin/bash './jenkins/scripts/deploy-for-test.sh'
+                sh './jenkins/scripts/deploy-for-production.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './jenkins/scripts/kill.sh'
             }
         }
     }
