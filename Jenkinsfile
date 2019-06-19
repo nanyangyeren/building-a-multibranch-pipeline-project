@@ -11,8 +11,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-
-                bash 'npm install'
+                bash '''#!/bin/bash
+                 echo "hello world" 
+                   node -v
+                     '''
             }
         }
     }
