@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               ./jenkins/scripts/deliver-for-test.sh 
+               sh './jenkins/scripts/deliver-for-test.sh'
             }
         }
     }
