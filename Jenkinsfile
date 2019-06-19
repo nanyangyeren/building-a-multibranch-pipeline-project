@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:8'
+            image 'huilianbuild:1.0'
             args '-p 3000:3000 -p 5000:5000'
         }
     }
@@ -11,19 +11,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                /bin/bash 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                sh './jenkins/scripts/test.sh'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         /bin/bash './jenkins/scripts/test.sh'
+        //     }
+        // }
         stage('Deploy for production') {
             steps {
-                sh './jenkins/scripts/deploy-for-production.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './jenkins/scripts/kill.sh'
+                /bin/bash './jenkins/scripts/deploy-for-test.sh'
+                // /bin/bash './jenkins/scripts/deploy-for-production.sh'
+                // input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                // /bin/bash './jenkins/scripts/kill.sh'
             }
         }
     }
