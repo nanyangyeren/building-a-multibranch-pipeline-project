@@ -11,13 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello, '
 
-                sh '''#!/bin/bash
-                    echo "Who I'm $SHELL"
-                    node -v
-                    npm install 
-                '''
+                /bin/bash 'npm install'
             }
         }
     }
