@@ -15,7 +15,8 @@ pipeline {
 
                 sh '''#!/bin/bash
                     echo "Who I'm $SHELL"
-                    ./jenkins/scripts/deploy-for-test.sh  
+                    node -v
+                    npm install 
                 '''
             }
         }
